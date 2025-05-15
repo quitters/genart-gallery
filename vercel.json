@@ -1,10 +1,7 @@
 {
   "version": 2,
   "name": "generative-art-gallery",
-  "builds": [
-    { "src": "package.json", "use": "@vercel/static-build" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false
 }

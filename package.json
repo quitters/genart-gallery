@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "serve",
-    "dev": "serve"
+    "dev": "serve",
+    "vercel-build": "echo 'Static site ready for deployment'",
+    "build": "echo 'Static site ready for deployment'"
   },
   "keywords": [
     "generative-art",
