@@ -3,5 +3,6 @@
   "name": "generative-art-gallery",
   "public": true,
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "outputDirectory": "."
 }
