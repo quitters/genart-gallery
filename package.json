@@ -1,0 +1,21 @@
+{
+  "name": "generative-art-gallery",
+  "version": "1.0.0",
+  "description": "A curated collection of 16 interactive generative art pieces created with p5.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve",
+    "dev": "serve"
+  },
+  "keywords": [
+    "generative-art",
+    "p5js",
+    "creative-coding"
+  ],
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
