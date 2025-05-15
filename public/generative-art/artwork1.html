@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative Art - Artwork 1</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="artwork1.js"></script>
+    <!-- Enable source maps -->
+    <script>
+        // Enable error reporting
+        window.addEventListener('error', function(e) {
+            console.error(e.message, e.filename, e.lineno, e.colno, e.error);
+        });
+        
+        // Enable debugging
+        if (typeof window.__debug === 'undefined') {
+            window.__debug = true;
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">← Back to Gallery</button>
+    <div id="canvas-container"></div> <!-- Added container for p5 canvas -->
+</body>
+</html>

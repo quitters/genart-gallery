@@ -105,55 +105,61 @@ function setupInteraction(grid) {
         
         .artwork-title {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 15px;
-            text-align: center;
+            bottom: 20px;
+            left: 20px;
             color: white;
-            font-weight: 300;
-            letter-spacing: 1px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .artwork-tile:hover .artwork-title {
+            opacity: 1;
+            transform: translateY(0);
         }
     `;
     document.head.appendChild(style);
     
-    grid.forEach((item) => {
-        item.button.addEventListener('mousemove', (e) => {
-            const rect = item.button.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            item.button.style.setProperty('--mouse-x', x + '%');
-            item.button.style.setProperty('--mouse-y', y + '%');
+    grid.forEach(({ button, title, index }) => {
+        button.addEventListener('mousemove', (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100 + '%';
+            const y = ((e.clientY - rect.top) / rect.height) * 100 + '%';
+            button.style.setProperty('--mouse-x', x);
+            button.style.setProperty('--mouse-y', y);
         });
         
-        item.button.addEventListener('click', () => {
-            window.location.href = artworks[item.index].path;
+        button.addEventListener('click', () => {
+            window.location.href = artworks[index].path;
         });
     });
 }
 
 function draw() {
-    background(0);
+    // Create animated background
+    background(0, 0.1);
     
-    // Draw background effect
-    noFill();
-    stroke(255, 0.05);
-    
-    for (let i = 0; i < 50; i++) {
-        const x = noise(i * 0.01, frameCount * 0.001) * width;
-        const y = noise(i * 0.01, frameCount * 0.001 + 100) * height;
-        const size = noise(i * 0.01, frameCount * 0.001 + 200) * 150 + 50;
+    // Draw flowing particles
+    for (let i = 0; i < 5; i++) {
+        let x = random(width);
+        let y = random(height);
+        let size = random(2, 5);
+        let hue = (frameCount + x + y) % 360;
         
-        strokeWeight(1);
+        noStroke();
+        fill(hue, 80, 100, 0.5);
         circle(x, y, size);
     }
 }
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-    // Recreate grid on resize
-    document.body.innerHTML = '<h1>Generative Art Gallery</h1>';
+    // Remove existing grid
+    document.body.innerHTML = '';
+    // Recreate grid
     const grid = createGrid();
     setupInteraction(grid);
 }

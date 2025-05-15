@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Function Collapse - Generative Art</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: white;
+        }
+        canvas {
+            display: block;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 5px;
+            color: #333;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+        .back-button:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .info-text {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            color: rgba(0, 0, 0, 0.7);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">← Back to Gallery</button>
+    <div class="info-text">Click to generate new pattern</div>
+    <script src="artwork12.js"></script>
+</body>
+</html>
