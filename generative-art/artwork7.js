@@ -236,7 +236,7 @@ let centralCircleSize = 420;
 let circuitPoem;
 
 function setup() {
-    createCanvas(1024, 1024);
+    createCanvas(windowWidth, windowHeight);
     colorMode(HSB, 360, 100, 100, 255);
     // Generative central circle size
     centralCircleVar = random(0.85, 1.15);
