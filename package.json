@@ -6,8 +6,8 @@
   "scripts": {
     "start": "serve",
     "dev": "serve",
-    "vercel-build": "mkdir -p public && cp -r index.html script.js styles.css generative-art README.md public/",
-    "build": "mkdir -p public && cp -r index.html script.js styles.css generative-art README.md public/"
+    "vercel-build": "mkdir -p public && cp -r * public/ && ls -la public/generative-art/",
+    "build": "mkdir -p public && cp -r * public/ && ls -la public/generative-art/"
   },
   "keywords": [
     "generative-art",
