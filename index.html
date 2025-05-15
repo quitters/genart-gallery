@@ -3,27 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Generative Art Gallery</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            background: black;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             font-family: Arial, sans-serif;
+            color: white;
         }
-        canvas {
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+        .enter-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        .enter-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
-    <script src="script.js"></script>
+    <div class="container">
+        <h1>Generative Art Gallery</h1>
+        <a href="generative-art/index.html" class="enter-button">Enter Gallery</a>
+    </div>
+    <script>
+        // Automatically redirect after a brief delay
+        setTimeout(function() {
+            window.location.href = "generative-art/index.html";
+        }, 1500);
+    </script>
 </body>
 </html>
